@@ -33,6 +33,8 @@
 
 --shadow:0 0 35px rgba(124,58,237,.25);
 
+--header-bg:rgba(124,58,237,.18);
+
 }
 
 *{
@@ -163,7 +165,7 @@ align-items:center;
 
 border:1px solid var(--border);
 
-background:rgba(124,58,237,.18);
+background:var(--header-bg);
 
 backdrop-filter:blur(18px);
 
@@ -171,7 +173,7 @@ border-radius:20px;
 
 z-index:999;
 
-transition:.3s;
+transition:background .3s, border-color .3s;
 
 }
 
@@ -980,6 +982,13 @@ width:100%;
 }
 
 }
+body.light{
+
+background:#F6F7FB;
+
+--header-bg:rgba(20,20,28,.55);
+
+}
 </style>
 
 </head>
@@ -1052,7 +1061,7 @@ Download & Share Source Code with a Modern Experience.
 
 <div class="hero-buttons">
 
-<button class="btn btn-primary">
+<button class="btn btn-primary" id="exploreBtn">
 
 Explore Script
 
@@ -1088,7 +1097,7 @@ id="search">
      SCRIPT SECTION
 =========================== -->
 
-<section class="scripts-section">
+<section class="scripts-section" id="scripts">
 
     <div class="section-title">
 
@@ -1286,6 +1295,10 @@ id="search">
         </div> 
 
     </div>
+
+    <p id="noResults" style="display:none;text-align:center;margin-top:40px;color:var(--sub);">
+        Script tidak ditemukan.
+    </p>
 
 </section>
 <!-- ===========================
